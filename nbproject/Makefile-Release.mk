@@ -35,10 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/7e504010/GUI.o \
-	${OBJECTDIR}/_ext/7e504010/Graph.o \
-	${OBJECTDIR}/_ext/7e504010/Simple_window.o \
-	${OBJECTDIR}/_ext/7e504010/Window.o \
+	${OBJECTDIR}/GUI.o \
+	${OBJECTDIR}/Graph.o \
+	${OBJECTDIR}/Simple_window.o \
+	${OBJECTDIR}/Window.o \
 	${OBJECTDIR}/main.o
 
 
@@ -46,8 +46,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=-mwindows -DWIN32 -DUSE_OPENGL32 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+CXXFLAGS=-mwindows -DWIN32 -DUSE_OPENGL32 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -56,7 +56,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-L../../../../../Developer/lib/c++/FLTK/lib
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -64,32 +64,32 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ppp2ed.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ppp2ed ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ppp2ed ${OBJECTFILES} ${LDLIBSOPTIONS} -mwindows -lfltk_images -lfltk -lfltk_png -lfltk_jpeg -lole32 -luuid -lcomctl32
 
-${OBJECTDIR}/_ext/7e504010/GUI.o: ../../../../../Developer/lib/c++/PPP2_Support_Code/GUI.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/7e504010
+${OBJECTDIR}/GUI.o: GUI.cpp 
+	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/7e504010/GUI.o ../../../../../Developer/lib/c++/PPP2_Support_Code/GUI.cpp
+	$(COMPILE.cc) -O2 -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GUI.o GUI.cpp
 
-${OBJECTDIR}/_ext/7e504010/Graph.o: ../../../../../Developer/lib/c++/PPP2_Support_Code/Graph.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/7e504010
+${OBJECTDIR}/Graph.o: Graph.cpp 
+	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/7e504010/Graph.o ../../../../../Developer/lib/c++/PPP2_Support_Code/Graph.cpp
+	$(COMPILE.cc) -O2 -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Graph.o Graph.cpp
 
-${OBJECTDIR}/_ext/7e504010/Simple_window.o: ../../../../../Developer/lib/c++/PPP2_Support_Code/Simple_window.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/7e504010
+${OBJECTDIR}/Simple_window.o: Simple_window.cpp 
+	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/7e504010/Simple_window.o ../../../../../Developer/lib/c++/PPP2_Support_Code/Simple_window.cpp
+	$(COMPILE.cc) -O2 -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Simple_window.o Simple_window.cpp
 
-${OBJECTDIR}/_ext/7e504010/Window.o: ../../../../../Developer/lib/c++/PPP2_Support_Code/Window.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/7e504010
+${OBJECTDIR}/Window.o: Window.cpp 
+	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/7e504010/Window.o ../../../../../Developer/lib/c++/PPP2_Support_Code/Window.cpp
+	$(COMPILE.cc) -O2 -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Window.o Window.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
