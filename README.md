@@ -1,4 +1,4 @@
-# tcpl-containers
+# ppp-stroustrup
 
 This project is fully functional support code that accompanies "Programming -- 
 Principles and Practice Using C++" 2nd ed by Bjarne Stroustrup. 
