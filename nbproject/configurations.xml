@@ -12,6 +12,7 @@
       <itemPath>MatrixIO11.h</itemPath>
       <itemPath>Point.h</itemPath>
       <itemPath>Simple_window.h</itemPath>
+      <itemPath>Window.h</itemPath>
       <itemPath>fltk.h</itemPath>
       <itemPath>std_lib_facilities.h</itemPath>
     </logicalFolder>
@@ -88,6 +89,8 @@
       </item>
       <item path="Window.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="Window.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="fltk.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
@@ -149,6 +152,8 @@
       <item path="Simple_window.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Window.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Window.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="fltk.h" ex="false" tool="3" flavor2="0">
       </item>
