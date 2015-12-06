@@ -46,8 +46,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=-mwindows -DWIN32 -DUSE_OPENGL32 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
-CXXFLAGS=-mwindows -DWIN32 -DUSE_OPENGL32 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+CCFLAGS=-mwindows
+CXXFLAGS=-mwindows
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -64,32 +64,32 @@ LDLIBSOPTIONS=-L../../../../../Developer/lib/c++/FLTK/lib
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ppp2ed.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ppp2ed ${OBJECTFILES} ${LDLIBSOPTIONS} -mwindows -lfltk_images -lfltk -lfltk_png -lfltk_jpeg -lole32 -luuid -lcomctl32
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ppp2ed ${OBJECTFILES} ${LDLIBSOPTIONS} -lfltk_images -lfltk -lfltk_png -lfltk_jpeg -lole32 -luuid -lcomctl32
 
 ${OBJECTDIR}/GUI.o: GUI.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GUI.o GUI.cpp
+	$(COMPILE.cc) -g -DWIN32 -DUSE_OPENGL32 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GUI.o GUI.cpp
 
 ${OBJECTDIR}/Graph.o: Graph.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Graph.o Graph.cpp
+	$(COMPILE.cc) -g -DWIN32 -DUSE_OPENGL32 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Graph.o Graph.cpp
 
 ${OBJECTDIR}/Simple_window.o: Simple_window.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Simple_window.o Simple_window.cpp
+	$(COMPILE.cc) -g -DWIN32 -DUSE_OPENGL32 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Simple_window.o Simple_window.cpp
 
 ${OBJECTDIR}/Window.o: Window.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Window.o Window.cpp
+	$(COMPILE.cc) -g -DWIN32 -DUSE_OPENGL32 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Window.o Window.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -DWIN32 -DUSE_OPENGL32 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I../../../../../Developer/lib/c++/FLTK/include -I../../../../../Developer/lib/c++/FLTK/include/FL/images -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
