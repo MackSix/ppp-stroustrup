@@ -56,7 +56,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../../../../../Developer/lib/c++/FLTK/lib
+LDLIBSOPTIONS=-Wl,-rpath,'.' -L../../../../../Developer/lib/c++/FLTK/lib
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -97,7 +97,7 @@ ${OBJECTDIR}/main.o: main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ppp2ed.exe
+	${RM} -r ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Subprojects
 .clean-subprojects:
